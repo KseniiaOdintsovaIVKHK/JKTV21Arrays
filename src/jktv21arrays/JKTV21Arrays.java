@@ -28,8 +28,10 @@ public class JKTV21Arrays {
         }
         //Arrays.sort(nums);
         int sum = 0;
-        int min = 10;
+        int min = n;
         int max = 0;
+        int sumDown = 0;
+        int sumUp = 0;
         for(int i = 0;i<nums.length;i++) {
             System.out.printf("%2d,",nums[i]);
             sum += nums[i];
@@ -48,15 +50,37 @@ public class JKTV21Arrays {
         for(int i  = 0; i < nums2.length;i++){
             for(int j = 0; j < nums2[i].length; j++){
                 nums2[i][j] = random.nextInt(n);
+                
             }
         }
-        
+        int[] colsSum = new int[n];
         for(int i  = 0; i < nums2.length;i++){
+            int lineSum = 0;
             for(int j = 0; j < nums2[i].length; j++){
                 System.out.printf("%3d",nums2[i][j]);
+                sum += nums2 [i][j];
+                lineSum += nums2 [i][j];
+                if(min > nums2[i][j]min = nums2[i][j]);
+                if(max < nums2[i][j]max = nums2[i][j]);
+                colsSum[j] += nums2[i][j];
+                if(i == j)sumDown += nums2 [i][j];
+                if(i == n-j)sumUp += nums2 [i][j];
             }
-            System.out.println();
+            System.out.println(' | '+lineSum );
         }
+        System.out.println("------------------");
+        for(int i = 0; i < colsSum.length; i++){
+            System.out.printf("%3d",colsSum[i][j]);
+        }
+        
+        
+        System.out.println("sum = "+sum);
+        System.out.println("sum min = "+min);
+        System.out.println("sum max = "+max);
+        System.out.println("sum Down = ");
+        System.out.println("sum Up = ");
+        
+     
     }
         
         
